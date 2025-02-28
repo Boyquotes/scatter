@@ -27,6 +27,10 @@ const ScatterUtil := preload('./common/scatter_util.gd')
 		source = val
 		property_list_changed.emit()
 
+@export var custom_script: Script:
+	set(val):
+		custom_script = val
+		ScatterUtil.request_parent_to_rebuild(self)
 
 @export_group("Source options", "source_")
 
